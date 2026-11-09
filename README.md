@@ -11,7 +11,40 @@ keeps them in sync.
   phone).
 - When a card is finished but the note goes on, switch the note to a new card.
 
-Status: in development (version 0.1.0), not yet published.
+Status: in development (version 0.1.0), not yet in Obsidian's community plugin list.
+
+## Installation
+
+Until the plugin is in the community plugin list, install it by hand. It needs Obsidian
+1.11.4 or later, and to build it: git and Node.js 18 or later.
+
+1. **Build it:**
+
+   ```
+   git clone https://github.com/antonfrancois/obsidian-trello-task-sync.git
+   cd obsidian-trello-task-sync
+   npm install
+   npm run build
+   ```
+
+2. **Copy it into your vault** (replace `/path/to/your/vault`):
+
+   ```
+   mkdir -p /path/to/your/vault/.obsidian/plugins/trello-task-sync
+   cp main.js manifest.json styles.css /path/to/your/vault/.obsidian/plugins/trello-task-sync/
+   ```
+
+3. **Enable it:** in Obsidian, **Settings → Community plugins**. Turn on community plugins if
+   asked, reload the list of installed plugins, and turn on **Trello Task Sync**.
+
+4. **Connect it to Trello:** see [Setup](#setup).
+
+**To update:** in the cloned folder, run `git pull` and `npm run build`, copy the three files
+again (step 2), then turn the plugin off and on in **Settings → Community plugins**.
+
+If your vault is synced to other devices (for example with Obsidian Sync and its "Installed
+community plugins" option), the plugin follows. Automatic sync stays off on phones unless
+you turn it on.
 
 ## Linking a note
 
